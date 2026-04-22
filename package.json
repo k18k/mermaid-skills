@@ -1,6 +1,6 @@
 {
   "name": "@k18k/mermaid-skills",
-  "version": "mermaid@11.14.0",
+  "version": "mermaid@11.14.0 force simulation",
   "private": true,
   "description": "Agent-ready Mermaid skills generated from official Mermaid documentation",
   "homepage": "https://github.com/k18k/mermaid-skills#readme",
