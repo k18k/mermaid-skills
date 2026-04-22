@@ -24,9 +24,6 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Install deps
-        run: npm ci || npm install
-
       - name: Run generator
         run: node generate-docs.ts
         env:
