@@ -1,0 +1,27 @@
+{
+  "name": "@k18k/mermaid-skills",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Agent-ready Mermaid skills generated from official Mermaid documentation",
+  "homepage": "https://github.com/k18k/mermaid-skills#readme",
+  "bugs": {
+    "url": "https://github.com/k18k/mermaid-skills/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k18k/mermaid-skills.git"
+  },
+  "license": "MIT",
+  "author": "k18k",
+  "type": "module",
+  "scripts": {
+    "start": "node generate-docs.ts"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "engineStrict": true,
+  "devDependencies": {
+    "@types/node": "^24.12.2"
+  }
+}
