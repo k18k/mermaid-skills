@@ -5,6 +5,7 @@
 - [c4](./syntax/c4.md)
 - [classDiagram](./syntax/classDiagram.md)
 - [entityRelationshipDiagram](./syntax/entityRelationshipDiagram.md)
+- [eventmodeling](./syntax/eventmodeling.md)
 - [examples](./syntax/examples.md)
 - [flowchart](./syntax/flowchart.md)
 - [gantt](./syntax/gantt.md)
