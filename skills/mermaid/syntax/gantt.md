@@ -1,3 +1,7 @@
+---
+description: 'Plan project schedules with tasks, sections, dependencies, milestones, date formats, excluded days, and axis settings.'
+---
+
 # Gantt diagrams
 
 > A Gantt chart is a type of bar chart, first developed by Karol Adamiecki in 1896, and independently by Henry Gantt in the 1910s, that illustrates a project schedule and the amount of time it would take for any one project to finish. Gantt charts illustrate number of days between the start and finish dates of the terminal elements and summary elements of a project.
@@ -130,6 +134,18 @@ The `title` is an _optional_ string to be displayed at the top of the Gantt char
 
 The `excludes` is an _optional_ attribute that accepts specific dates in YYYY-MM-DD format, days of the week ("sunday") or "weekends", but not the word "weekdays".
 These date will be marked on the graph, and be excluded from the duration calculation of tasks. Meaning that if there are excluded dates during a task interval, the number of 'skipped' days will be added to the end of the task to ensure the duration is as specified in the code.
+
+Multiple `excludes` lines are supported and their tokens are concatenated, so long exclusion lists can be split across grouped lines with comments:
+
+```
+gantt
+    dateFormat DD-MM-YYYY
+    excludes weekends
+    %% week 7 is winter break
+    excludes 10-02-2025 11-02-2025 12-02-2025 13-02-2025 14-02-2025
+    %% workers holiday 1 maj
+    excludes 01-05-2025
+```
 
 #### Weekend (v\11.0.0+)
 

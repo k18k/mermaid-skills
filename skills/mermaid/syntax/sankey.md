@@ -1,10 +1,10 @@
+---
+description: 'Show flows between nodes, with link widths proportional to flow quantities, defined in a CSV-like format.'
+---
+
 # Sankey diagram (v10.3.0+)
 
 > A sankey diagram is a visualization used to depict a flow from one set of values to another.
-
-```warning
-This is an experimental diagram. Its syntax are very close to plain CSV, but it is to be extended in the nearest future.
-```
 
 The things being connected are called nodes and the connections are called links.
 
@@ -185,5 +185,69 @@ Graph layout can be changed by setting `nodeAlignment` to:
 - `center`
 - `left`
 - `right`
+
+### Label Style (v11.15.0+)
+
+You can change how node labels are rendered by setting `labelStyle`:
+
+- `legacy` (default) - plain text labels, positioned based on node x-coordinate
+- `outlined` - labels with a background stroke for improved readability, positioned based on node layer relative to the central node
+
+```mermaid-example
+---
+config:
+  sankey:
+    showValues: false
+    labelStyle: outlined
+---
+sankey
+
+Electricity grid,Heating and cooling - homes,113.726
+Electricity grid,Industry,342.165
+Electricity grid,Losses,56.691
+```
+
+### Node Width and Padding (v11.15.0+)
+
+You can customize the node dimensions:
+
+- `nodeWidth` - width of the node rectangles in pixels (default: `10`)
+- `nodePadding` - vertical padding between nodes in pixels (default: `12`)
+
+```mermaid-example
+---
+config:
+  sankey:
+    showValues: false
+    nodeWidth: 15
+    nodePadding: 20
+---
+sankey
+
+Electricity grid,Heating and cooling - homes,113.726
+Electricity grid,Industry,342.165
+Electricity grid,Losses,56.691
+```
+
+### Custom Node Colors (v11.15.0+)
+
+You can assign specific colors to nodes using the `nodeColors` map. Nodes not listed will use the default color scheme. Values must be valid CSS colors (hex, `rgb()`, `hsl()`, or named colors).
+
+```mermaid-example
+---
+config:
+  sankey:
+    showValues: false
+    nodeColors:
+      Electricity grid: "#4e79a7"
+      Industry: "#e15759"
+      Losses: "#bab0ab"
+---
+sankey
+
+Electricity grid,Heating and cooling - homes,113.726
+Electricity grid,Industry,342.165
+Electricity grid,Losses,56.691
+```
 
 <!--- cspell:ignore Ngas bioenergy biofuel --->
